@@ -1,0 +1,92 @@
+/* stylelint-disable color-function-notation */
+/* stylelint-disable value-keyword-case */
+@import '~antd/dist/antd.variable.min.css';
+@import '/src/assets/theme/customize.scss';
+@import '/src/assets/theme/common-class.scss';
+@import '/src/assets/theme/constants.scss';
+@import '/src/assets/theme/color.scss';
+@import '/src/assets/theme/font.scss';
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: $page-bg;
+}
+
+html body {
+  color: $primary-text;
+  line-height: 0;
+  @extend .font-family-regular;
+}
+
+::selection {
+  background: rgba(104, 170, 253, 40%);
+  color: currentColor;
+}
+
+:-moz-selection {
+  background: rgba(104, 170, 253, 40%);
+  color: currentColor;
+}
+
+::-webkit-selection {
+  background: rgba(104, 170, 253, 40%);
+  color: currentColor;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.text-btn-base {
+  height: 24px;
+  line-height: 24px;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.text-black-btn {
+  @extend .text-btn-base;
+
+  color: $primary-text;
+  &:hover {
+    @extend .text-black-btn-select;
+  }
+}
+
+.text-black-btn-select {
+  color: $brand;
+  background-color: transparent;
+}
+
+.header-nav-btn {
+  @extend .text-btn-base;
+
+  color: var(--firstMenuDefaultFontColor);
+  &:hover {
+    @extend .header-nav-btn-select;
+  }
+}
+
+.header-nav-btn-select {
+  color: var(--firstMenuFontHoverColor);
+  background-color: transparent;
+}
+
+.home-page {
+  overflow-x: hidden;
+  @media screen and (max-width: $divide-991) {
+    overflow-x: auto;
+  }
+}
+
+.empty-container {
+  min-width: $page-min-width;
+}

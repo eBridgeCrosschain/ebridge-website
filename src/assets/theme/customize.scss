@@ -1,0 +1,64 @@
+/* stylelint-disable alpha-value-notation */
+/* stylelint-disable color-function-notation */
+@import './constants.scss';
+
+@font-face {
+  font-family: Roboto-Bold;
+  font-display: swap;
+  src: url('/font/Roboto-Bold.ttf');
+}
+@font-face {
+  font-family: Roboto-Medium;
+  font-display: swap;
+  src: url('/font/Roboto-Medium.ttf');
+}
+@font-face {
+  font-family: Roboto-Regular;
+  font-display: swap;
+  src: url('/font/Roboto-Regular.ttf');
+}
+html {
+  // constants
+  $max-weight: 1080px;
+  $header-height: 80px;
+}
+
+.page-container {
+  @media screen and (min-width: $divide-992) {
+    max-width: $content-width-large-desktop;
+  }
+
+  @media screen and (max-width: $divide-991) and (min-width: $divide-768) {
+    max-width: $content-width-desktop;
+    width: $content-width-desktop;
+  }
+
+  @media screen and (max-width: $divide-767) and (min-width: $divide-580) {
+    max-width: $content-width-tablet;
+    width: $content-width-tablet;
+  }
+
+  @media screen and (max-width: $divide-579) {
+    min-width: $content-width-mobile;
+  }
+}
+
+.section-container {
+  padding-left: 20px;
+  padding-right: 20px;
+  min-width: $page-min-width;
+}
+
+.ant-popover-arrow-content {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.03) !important;
+}
+.ant-popover-inner {
+  box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.03), 0 6px 16px 0 rgba(0, 0, 0, 0.03), 0 9px 28px 8px rgba(0, 0, 0, 0.03) !important;
+}
+.ant-popover-inner-content {
+  padding: 8px !important;
+}
+
+// Not suitable for dark mode
+// html[data-theme='dark'] {
+// }

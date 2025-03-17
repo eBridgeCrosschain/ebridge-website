@@ -1,0 +1,180 @@
+/* stylelint-disable selector-class-pattern */
+@import '/src/assets/theme/color.scss';
+@import '/src/assets/theme/constants.scss';
+
+.whiteType {
+  color: $primary-text;
+  background: $page-bg;
+  .downloadPageBtn {
+    color: $primary-text;
+    border: 1px solid $primary-text;
+    &:hover {
+      color: $primary-text;
+      border: 1px solid $primary-text;
+      opacity: 0.8;
+    }
+  }
+  .desc {
+    color: $secondary-text;
+  }
+}
+
+.brandType {
+  color: $white-text;
+  background: $hover;
+}
+
+.brandModuleWrap {
+  min-height: 688px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .brandModule {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+
+    .brandModuleLeft {
+      .title {
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 64px;
+        padding-bottom: 24px;
+      }
+
+      .desc {
+        font-size: 18px;
+        line-height: 26px;
+        margin-bottom: 0;
+      }
+      .buttonGroup {
+        margin-top: 80px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        .brandButton {
+          padding-left: 28px;
+          padding-right: 28px;
+        }
+      }
+    }
+    .mainImage {
+      max-width: 640px;
+      max-height: 640px;
+    }
+  }
+
+  @media screen and (max-width: 1079px) and (min-width: $divide-992) {
+    .brandModuleLeft {
+      max-width: 490px;
+      width: 490px;
+    }
+  }
+
+  @media screen and (min-width: $divide-992) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 24px;
+
+    .brandModuleLeft {
+      width: 550px;
+    }
+  }
+
+  @media screen and (max-width: $divide-991) {
+    .brandModule {
+      padding-bottom: 60px;
+      flex-direction: column;
+
+      .brandModuleLeft {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 0;
+        padding-top: 48px;
+        padding-bottom: 40px;
+        .title {
+          font-size: 36px;
+          line-height: 48px;
+          width: auto;
+          text-align: center;
+        }
+        .desc {
+          font-size: 16px;
+          line-height: 24px;
+        }
+        .buttonGroup {
+          margin-top: 40px;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+// Container Adaptation Rules
+.brandModuleContainer {
+  @media screen and (min-width: 1340px) {
+    max-width: 1300px;
+    width: 1300px;
+    .brandModuleLeft {
+      margin-left: 120px;
+      width: 550px;
+      min-width: 550px;
+    }
+    .mainImage {
+      width: 640px;
+      height: 640px;
+    }
+  }
+
+  @media screen and (max-width: 1339px) and (min-width: 1100px) {
+    width: 1300px;
+    min-width: 1300px;
+    .brandModuleLeft {
+      margin-left: 80px;
+    }
+    .mainImage {
+      width: 600px;
+      height: 600px;
+    }
+  }
+
+  @media screen and (max-width: 1099px) and (min-width: $content-width-large-desktop) {
+    width: 1300px;
+    .brandModuleLeft {
+      margin-left: 20px;
+    }
+    .mainImage {
+      width: 600px;
+      height: 600px;
+    }
+  }
+
+  // @media screen and (max-width: $divide-991) {
+  //   .desc {
+  //     text-align: center;
+  //   }
+  // }
+
+  @media screen and (min-width: 1079px) {
+    max-width: $content-width-large-desktop;
+  }
+
+  @media screen and (max-width: $divide-991) and (min-width: $divide-768) {
+    max-width: $content-width-desktop;
+    width: $content-width-desktop;
+  }
+
+  @media screen and (max-width: $divide-767) and (min-width: $divide-580) {
+    max-width: $content-width-tablet;
+    width: $content-width-tablet;
+  }
+
+  @media screen and (max-width: $divide-579) {
+    min-width: $content-width-mobile;
+  }
+}

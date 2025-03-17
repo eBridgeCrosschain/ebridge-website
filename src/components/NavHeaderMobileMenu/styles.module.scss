@@ -1,0 +1,120 @@
+/* stylelint-disable property-no-vendor-prefix */
+/* stylelint-disable alpha-value-notation */
+/* stylelint-disable color-function-notation */
+/* stylelint-disable selector-class-pattern */
+@import '/src/assets/theme/color.scss';
+@import '/src/assets/theme/constants.scss';
+
+.navHeaderMobileMenuBody {
+  width: 100%;
+  padding: 24px;
+  background-color: var(--pageBg) !important;
+}
+
+.logoRow {
+  height: 80px;
+}
+
+.menusWrap {
+  height: 100%;
+  overflow-y: auto;
+  overscroll-behavior-y: contain !important;
+}
+
+.menuGroup {
+  border-bottom: 1px solid $dividers;
+}
+
+.firstMenu {
+  height: 64px;
+  align-items: center;
+  cursor: pointer;
+  color:  var(--firstMenuDefaultFontColor);
+  svg {
+    @include rotate(0deg, 0.2s);
+    path {
+      fill: var(--firstMenuDefaultFontColor);
+    }
+  }
+
+  &:hover {
+    span {
+      color: var(--firstMenuFontHoverColor);
+    }
+    svg path {
+      fill: var(--firstMenuFontHoverColor);
+    }
+  }
+}
+
+.visible {
+  height: auto;
+  display: block;
+}
+
+.hidden {
+  height: 0;
+  display: none;
+}
+
+.rotateSvg {
+  svg {
+    @include rotate(180deg, 0.2s);
+  }
+}
+
+.secondMenuList {
+  .secondMenu {
+    height: 48px;
+    line-height: 48px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    padding-left: 12px;
+    color: $primary-text;
+    cursor: pointer;
+
+    &:nth-last-child(1) {
+      margin-bottom: 20px;
+    }
+    &:hover {
+      color: $brand;
+      background: $hover-bg;
+    }
+  }
+}
+
+@mixin downloadBtnHover {
+  opacity: 0.8;
+  color: $white-text;
+  background: $brand;
+}
+
+.downloadBtn {
+  width: 100%;
+  color: $white-text;
+  background: $brand;
+  border-radius: 6px;
+  padding: 12px 24px;
+  height: 48px;
+  opacity: 1;
+  margin-top: 40px;
+  &:hover {
+    @include downloadBtnHover;
+  }
+  &:focus {
+    opacity: 1;
+    color: $white-text;
+    background: $brand;
+  }
+}
+.downloadBtnHover {
+  opacity: 0.8;
+  color: $white-text;
+  background: $brand;
+}
+
+.closeIcon {
+  svg path {
+    stroke: $primary-text;
+  }
+}

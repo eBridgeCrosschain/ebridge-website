@@ -1,0 +1,58 @@
+/* stylelint-disable selector-class-pattern */
+@import '/src/assets/theme/color.scss';
+
+.featureCardWrapper {
+  padding: 48px 32px 64px;
+  background: $white-bg;
+  border-radius: 16px;
+  width: 100%;
+
+  .cardTitle {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 32px;
+    color: $primary-text;
+    margin-top: 40px;
+    margin-bottom: 24px;
+  }
+
+  .cardContent {
+    font-size: 16px;
+    line-height: 24px;
+    color: $secondary-text;
+    .cardContentRow {
+      margin-bottom: 8px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .iconWrap {
+    position: relative;
+    width: 52px;
+    height: 52px;
+    .iconHover {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .iconNormal {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+.featureCardWrapperHover {
+  &:hover {
+    background: $brand !important;
+    .cardTitle {
+      color: $white-text;
+    }
+    .cardContent {
+      color: $white-text;
+    }
+  }
+}

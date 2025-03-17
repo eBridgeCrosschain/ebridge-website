@@ -1,0 +1,56 @@
+/* stylelint-disable selector-class-pattern */
+@import '/src/assets/theme/color.scss';
+
+.storeBtn {
+  width: 180px;
+  height: 50px;
+  color: $primary-text;
+  border-radius: 6px;
+  border: 1px solid $border;
+  background: $brand;
+  padding: 0;
+
+  .storeBtnLogo {
+    margin: 0 auto;
+  }
+  &:hover {
+    background: linear-gradient(0deg, $hover, $hover), $brand;
+    border: 1px solid $border;
+  }
+  &:focus {
+    border: 1px solid $border;
+    background: $brand;
+  }
+}
+
+.otherStoreBtn {
+  width: 230px !important;
+}
+
+.goDownloadPageBtn {
+  width: 180px;
+  height: 50px;
+  border: 1px solid rgb(255 255 255 / 60%);
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 16px;
+  color: $primary-text;
+  background: transparent;
+
+  &:hover {
+    border: 1px solid rgb(255 255 255 / 60%);
+    color: $primary-text;
+    opacity: 0.8;
+    background: transparent;
+  }
+  &:focus {
+    border: 1px solid rgb(255 255 255 / 60%);
+    color: $primary-text;
+    opacity: 1;
+    background: transparent;
+  }
+}
+
+.comingSoonPopover {
+  padding-right: 15px !important;
+}

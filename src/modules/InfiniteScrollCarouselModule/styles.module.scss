@@ -1,0 +1,23 @@
+/* stylelint-disable selector-class-pattern */
+@import '/src/assets/theme/color.scss';
+@import '/src/assets/theme/constants.scss';
+
+.infiniteScrollCarouselModuleWrapper {
+  background: $page-bg;
+  color: $primary-text;
+  .title {
+    margin-bottom: 80px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48px;
+  }
+
+  @media screen and (max-width: $divide-991) {
+    .title {
+      margin-bottom: 40px;
+      font-size: 30px;
+      line-height: 38px;
+    }
+  }
+}

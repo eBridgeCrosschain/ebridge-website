@@ -1,0 +1,24 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-prettier"],
+  "customSyntax": "postcss-scss",
+  "rules": {
+    "font-family-name-quotes": null,
+    "rule-empty-line-before": null,
+    "selector-pseudo-class-no-unknown": null,
+    "no-descending-specificity": null,
+    "at-rule-no-unknown": null,
+    "custom-property-pattern": null,
+    "font-family-no-missing-generic-family-keyword": [
+      true,
+      {
+        "ignoreFontFamilies": [
+          "Roboto-Regular",
+          "Roboto-Bold",
+          "Roboto-Medium",
+          "PingFangSC-Regular",
+          "PingFangSC-Medium"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+/* stylelint-disable selector-class-pattern */
+@import '/src/assets/theme/color.scss';
+@import '/src/assets/theme/constants.scss';
+
+.graphicTextModule {
+  background-color: $page-bg;
+
+  .sectionTitle {
+    word-wrap: break-word;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+    max-width: $content-width-large-desktop;
+    margin: auto;
+  }
+
+  .sectionSubTitle {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-top: 18px;
+    text-align: center;
+    color: $secondary-text;
+  }
+
+  .graphicTextModuleItem {
+    margin-bottom: 120px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .graphicTextModuleTitle {
+    margin-bottom: 80px;
+  }
+  .image {
+    max-width: 500px;
+    max-height: 500px;
+  }
+
+  @media screen and (max-width: $divide-991) {
+    .sectionTitle {
+      font-size: 30px;
+      line-height: 40px;
+      max-width: 652px;
+      min-width: $content-width-mobile;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .graphicTextModuleItem {
+      max-width: $content-width-tablet;
+      min-width: $content-width-mobile;
+      margin-bottom: 100px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    .graphicTextModuleTitle {
+      margin-bottom: 40px;
+    }
+    .image {
+      max-width: 295px;
+      max-height: 295px;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+/* stylelint-disable selector-class-pattern */
+@import '/src/assets/theme/color.scss';
+@import '/src/assets/theme/constants.scss';
+
+.infiniteScrollCarouselWrapper {
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  max-width: 1080px;
+  .scrollContent,
+  .carouselItemsWrapper {
+    gap: 60px;
+  }
+  .itemWrapper {
+    gap: 12px;
+    .name {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+  }
+  .displayNone {
+    display: none;
+  }
+  .infiniteScrollCarouselMask {
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    background: linear-gradient(90deg, rgb(255 255 255 / 0%) 0%, $white-text 100%);
+  }
+  .infiniteScrollCarouselMaskBefore {
+    left: 0;
+    transform: rotate(180deg);
+  }
+  .infiniteScrollCarouselMaskAfter {
+    right: 0;
+  }
+  @media screen and (max-width: #{$content-width-large-desktop - 1}) {
+    margin: 0 20px;
+  }
+  @media screen and (max-width: $divide-991) {
+    margin: 0 auto;
+  }
+  @media screen and (min-width: $divide-992) {
+    padding-left: 20px;
+    padding-right: 20px;
+    min-width: $page-min-width;
+  }
+}

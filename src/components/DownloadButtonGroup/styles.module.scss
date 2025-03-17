@@ -1,0 +1,13 @@
+/* stylelint-disable selector-class-pattern */
+@import '/src/assets/theme/constants.scss';
+
+.DownloadBtnGroup {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  @media screen and (max-width: $divide-579) {
+    justify-content: center;
+  }
+}

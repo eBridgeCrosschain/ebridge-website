@@ -1,0 +1,63 @@
+/* stylelint-disable selector-class-pattern */
+@import '/src/assets/theme/color.scss';
+@import '/src/assets/theme/constants.scss';
+
+.featureCardModuleWrapper {
+  background: $page-bg;
+
+  .featureCardModuleContentWrapper {
+    gap: 80px;
+  }
+
+  .sectionTitleWrapper {
+    gap: 16px;
+  }
+
+  .sectionTitle {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+    color: $primary-text;
+  }
+
+  .sectionSubTitle {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: $secondary-text;
+  }
+
+  .sectionCardWrapper {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    min-height: 400px;
+  }
+
+  @media screen and (min-width: #{$divide-991 + 1}) {
+    .sectionCardWrapper {
+      .card {
+        flex: 1;
+      }
+    }
+  }
+
+  @media screen and (max-width: $divide-991) {
+    .featureCardModuleContentWrapper {
+      gap: 40px;
+    }
+
+    .sectionTitle {
+      font-size: 30px;
+      line-height: 40px;
+      max-width: $content-width-tablet;
+      min-width: $content-width-mobile;
+    }
+    .sectionCardWrapper {
+      max-width: $content-width-tablet;
+      min-width: $content-width-mobile;
+      flex-wrap: wrap;
+    }
+  }
+}

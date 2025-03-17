@@ -1,0 +1,32 @@
+$brand: var(--brand);
+$hover: var(--hover);
+$normal: var(--normal);
+$click: var(--click);
+$disable: var(--disable);
+
+$link: var(--link);
+$blue-bg: var(--blueBg);
+$success: var(--success);
+$success-bg: var(--successBg);
+$warning: var(--warning);
+$warning-bg: var(--warningBg);
+$error: var(--error);
+$error-bg: var(--errorBg);
+
+// $error-normal: var(--errorNormal);
+// $error-hover: var(--errorHover);
+// $error-click: var(--errorClick);
+// $error-disable: var(--errorDisable);
+
+$primary-text: var(--primaryText);
+$secondary-text: var(--secondaryText);
+$disable-text: var(--disableText);
+$white-text: var(--whiteText);
+$border: var(--border);
+$dash: var(--dash);
+$dividers: var(--dividers);
+$normal-bg: var(--normalBg);
+$hover-bg: var(--hoverBg);
+$click-bg: var(--clickBg);
+$page-bg: var(--pageBg);
+$white-bg: #fff;

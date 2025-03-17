@@ -1,0 +1,118 @@
+/* stylelint-disable selector-class-pattern */
+@import '/src/assets/theme/color.scss';
+@import '/src/assets/theme/constants.scss';
+
+.footer {
+  padding-top: 60px;
+  min-width: $page-min-width;
+
+  .footerBody {
+    width: 100%;
+  }
+
+  .footerNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
+    flex-wrap: wrap;
+    margin-bottom: 36px;
+    overflow-x: hidden; // Prevent horizontal scrolling caused by too long menu title
+    .footerLogoWrapper {
+      gap: 12px;
+      margin-bottom: 8px; // 40px
+    }
+
+    .logo {
+      cursor: 'pointer';
+    }
+
+    .footerDescription {
+      max-width: 288px;
+      color: $secondary-text;
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    .menus {
+      flex-wrap: wrap;
+      gap: 90px;
+      // gap: calc((100% - 600px) / 4);
+
+      .menuGroup {
+        width: 120px;
+        overflow-x: hidden;
+        .firstMenus {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 24px;
+          color: $secondary-text;
+          margin-bottom: 12px;
+        }
+        .secondMenus {
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 20px;
+          color: var(--secondMenuDefaultFontColor);
+          margin-bottom: 8px;
+          cursor: pointer;
+          &:hover {
+            color: var(--secondMenuFontHoverColor);
+          }
+        }
+      }
+    }
+  }
+
+  .footerMedia {
+    height: 64px;
+    border-top: 1px solid $dividers;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .iconBase {
+      width: 24px;
+      height: 24px;
+      margin-right: 22px;
+      cursor: pointer;
+    }
+
+    .footerPower {
+      font-size: 14px;
+      line-height: 22px;
+      color: $disable-text;
+    }
+  }
+
+  @media screen and (max-width: $divide-767) {
+    .footerNav {
+      flex-direction: column;
+
+      .footerLogoWrapper {
+        margin-bottom: 40px;
+      }
+    }
+  }
+  @media screen and (max-width: $divide-579) {
+    .footerNav {
+      .menus {
+        flex-direction: column;
+        gap: 24px;
+      }
+    }
+    .footerMedia {
+      height: 94px;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding-top: 20px;
+
+      .footerPower {
+        margin-top: 16px;
+      }
+    }
+  }
+}
