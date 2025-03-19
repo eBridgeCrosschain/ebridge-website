@@ -13,14 +13,6 @@ module.exports = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'ebridge-dev.s3.ap-northeast-1.amazonaws.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'ebridge.s3.ap-northeast-1.amazonaws.com',
-      },
-      {
-        protocol: 'https',
         hostname: 'ebridge.exchange',
       },
       {
@@ -29,11 +21,7 @@ module.exports = {
       },
       {
         protocol: 'https',
-        hostname: 'home.ebridge.exchange',
-      },
-      {
-        protocol: 'https',
-        hostname: 'testhome.ebridge.exchange',
+        hostname: 'testcms.ebridge.exchange',
       },
     ],
   },

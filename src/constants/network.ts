@@ -8,8 +8,8 @@ export type WebsiteNetworkConfig = {
 export const BackEndNetWorkMap: Record<string, WebsiteNetworkConfig> = {
   eBridge: {
     dev: {
-      cmsUrl: 'https://testhome.ebridge.exchange/cms/', //'https://testcms.ebridge.exchange/',
-      s3Url: 'https://ebridge-dev.s3.ap-northeast-1.amazonaws.com/',
+      cmsUrl: 'https://testcms.ebridge.exchange/',
+      s3Url: 'https://testcms.ebridge.exchange/assets/',
     },
     mainnet: {
       cmsUrl: 'https://cms.ebridge.exchange/',
