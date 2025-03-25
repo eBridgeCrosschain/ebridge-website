@@ -1,6 +1,7 @@
 /* stylelint-disable selector-class-pattern */
 @import '/src/assets/theme/color.scss';
 @import '/src/assets/theme/constants.scss';
+@import '/src/assets/theme/font.scss';
 
 .infiniteScrollCarouselWrapper {
   position: relative;
@@ -15,7 +16,7 @@
     gap: 12px;
     .name {
       font-size: 16px;
-      font-weight: 400;
+      font-weight: $font-family-regular-weight;
       line-height: 24px;
     }
   }

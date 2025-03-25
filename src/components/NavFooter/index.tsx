@@ -142,9 +142,7 @@ export default function NavFooter({ className, style, footerMediaClassName, data
               );
             })}
           </div>
-          <div className={styles.footerPower}>
-            {data.powerName.text}@{getFullYear()}
-          </div>
+          <div className={styles.footerPower}>{`© ${getFullYear()} ${data.powerName.text}`}</div>
         </div>
       </div>
     </footer>

@@ -1,5 +1,6 @@
 /* stylelint-disable selector-class-pattern */
 @import '/src/assets/theme/color.scss';
+@import '/src/assets/theme/font.scss';
 
 .storeBtn {
   width: 180px;
@@ -32,7 +33,8 @@
   height: 50px;
   border: 1px solid rgb(255 255 255 / 60%);
   border-radius: 6px;
-  font-weight: 500;
+  font-weight: $font-family-medium-weight;
+  font-family: $font-family-medium-family;
   font-size: 16px;
   color: $primary-text;
   background: transparent;

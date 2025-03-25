@@ -21,5 +21,7 @@ export interface IPartnersModule {
 export interface IPartnerItem {
   index: number;
   logoImage: ImageWrapper;
+  hoverLogoImage?: ImageWrapper;
+  borderColor?: string;
   url?: string;
 }

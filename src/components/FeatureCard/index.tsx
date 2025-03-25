@@ -1,4 +1,4 @@
-import { CSSProperties, useState } from 'react';
+import { CSSProperties, useCallback, useState } from 'react';
 import clsx from 'clsx';
 import CommonImage from '../CommonImage';
 import { IFeatureCardItem } from '@/types/modules/featureCardModule';
@@ -26,14 +26,15 @@ export default function FeatureCard(props: FeatureCardProps) {
   const { isMobile } = useResponsive();
   const [isHover, setIsHover] = useState(false);
 
-  function onMouseOver() {
+  const onMouseOver = useCallback(() => {
     if (!isMobile) {
       setIsHover(true);
     }
-  }
-  function onMouseOut() {
+  }, [isMobile]);
+  const onMouseOut = useCallback(() => {
     setIsHover(false);
-  }
+  }, []);
+
   return (
     <div
       className={clsx(styles.featureCardWrapper, isHover && styles.featureCardWrapperHover, className)}

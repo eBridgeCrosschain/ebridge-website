@@ -1,6 +1,7 @@
 /* stylelint-disable selector-class-pattern */
 @import '/src/assets/theme/color.scss';
 @import '/src/assets/theme/constants.scss';
+@import '/src/assets/theme/font.scss';
 
 .featureDescModuleWrap {
   display: flex;
@@ -15,7 +16,8 @@
 
   .title {
     font-size: 40px;
-    font-weight: 700;
+    font-weight: $font-family-semibold-weight;
+    font-family: $font-family-semibold-family;
     line-height: 48px;
     color: $white-text;
   }

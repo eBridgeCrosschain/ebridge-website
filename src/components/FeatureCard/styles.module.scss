@@ -1,5 +1,6 @@
 /* stylelint-disable selector-class-pattern */
 @import '/src/assets/theme/color.scss';
+@import '/src/assets/theme/font.scss';
 
 .featureCardWrapper {
   padding: 48px 32px 64px;
@@ -8,7 +9,8 @@
   width: 100%;
 
   .cardTitle {
-    font-weight: 700;
+    font-weight: $font-family-semibold-weight;
+    font-family: $font-family-semibold-family;
     font-size: 22px;
     line-height: 32px;
     color: $primary-text;

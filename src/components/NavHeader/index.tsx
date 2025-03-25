@@ -81,6 +81,31 @@ export default function NavHeader({ className, style, path = ROUTER.DEFAULT, dat
     return 200;
   }, [data.logo?.height, data.logo?.width]);
 
+  const _height = useMemo(() => {
+    const _heightData = data.actionButton?.commonStyles.height;
+    return _heightData ? _heightData + 'px' : 'auto';
+  }, [data.actionButton?.commonStyles.height]);
+
+  const _fontSize = useMemo(() => {
+    const _fontSizeData = data.actionButton?.commonStyles.fontSize;
+    return _fontSizeData ? _fontSizeData + 'px' : '16px';
+  }, [data.actionButton?.commonStyles.fontSize]);
+
+  const _borderRadius = useMemo(() => {
+    const _borderRadiusData = data.actionButton?.commonStyles.borderRadius;
+    return _borderRadiusData ? _borderRadiusData + 'px' : '6px';
+  }, [data.actionButton?.commonStyles.borderRadius]);
+
+  const _paddingHorizontal = useMemo(() => {
+    const _paddingHorizontalData = data.actionButton?.commonStyles.paddingHorizontal;
+    return _paddingHorizontalData ? _paddingHorizontalData + 'px' : '4px';
+  }, [data.actionButton?.commonStyles.paddingHorizontal]);
+
+  const _paddingVertical = useMemo(() => {
+    const _paddingVerticalData = data.actionButton?.commonStyles.paddingVertical;
+    return _paddingVerticalData ? _paddingVerticalData + 'px' : '15px';
+  }, [data.actionButton?.commonStyles.paddingVertical]);
+
   return (
     <header
       id="website-header"
@@ -161,6 +186,13 @@ export default function NavHeader({ className, style, path = ROUTER.DEFAULT, dat
                     borderColor: data.actionButton.commonStyles.default.borderColor,
                     color: data.actionButton.commonStyles.default.fontColor,
                     width: data.actionButton.commonStyles.width ? data.actionButton.commonStyles.width + 'px' : 'auto',
+                    height: _height,
+                    fontSize: _fontSize,
+                    borderRadius: _borderRadius,
+                    paddingTop: _paddingVertical,
+                    paddingBottom: _paddingVertical,
+                    paddingLeft: _paddingHorizontal,
+                    paddingRight: _paddingHorizontal,
                   }}>
                   {data.actionButton.text}
                 </div>

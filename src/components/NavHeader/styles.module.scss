@@ -4,6 +4,7 @@
 /* stylelint-disable selector-class-pattern */
 @import '/src/assets/theme/constants.scss';
 @import '/src/assets/theme/color.scss';
+@import '/src/assets/theme/font.scss';
 
 .navHeader {
   width: 100%;
@@ -126,7 +127,8 @@
     .secondMenuItem {
       width: 100%;
       padding: 8px 12px;
-      font-weight: 500;
+      font-weight: $font-family-medium-weight;
+      font-family: $font-family-medium-family;
       font-size: 16px;
       color: $primary-text;
       border-radius: 2px;

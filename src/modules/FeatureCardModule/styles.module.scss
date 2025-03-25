@@ -1,6 +1,7 @@
 /* stylelint-disable selector-class-pattern */
 @import '/src/assets/theme/color.scss';
 @import '/src/assets/theme/constants.scss';
+@import '/src/assets/theme/font.scss';
 
 .featureCardModuleWrapper {
   background: $page-bg;
@@ -14,7 +15,8 @@
   }
 
   .sectionTitle {
-    font-weight: 700;
+    font-weight: $font-family-semibold-weight;
+    font-family: $font-family-semibold-family;
     font-size: 40px;
     line-height: 48px;
     text-align: center;

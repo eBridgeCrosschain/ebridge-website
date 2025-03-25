@@ -1,10 +1,16 @@
 /* stylelint-disable selector-class-pattern */
 @import '/src/assets/theme/color.scss';
+@import '/src/assets/theme/font.scss';
+
 .sectionWrap {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: bottom;
+  background-size: 100% auto;
 }
 
 .container {
@@ -13,7 +19,7 @@
 }
 
 .buttonGroup {
-  margin-top: 80px;
+  margin-top: 64px;
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
@@ -22,9 +28,10 @@
 
 .title {
   color: $white-text;
-  font-size: 56px;
+  font-size: 48px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: $font-family-semibold-weight;
+  font-family: $font-family-semibold-family;
   line-height: 64px;
   text-align: center;
 }
@@ -32,7 +39,7 @@
 .descriptionItem {
   font-size: 18px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: $font-family-regular-weight;
   line-height: 26px;
   color: $white-text;
   align-items: center;
@@ -50,17 +57,17 @@
 
 @media screen and (max-width: 991px) and (min-width: 0) {
   .title {
-    font-size: 40px;
+    font-size: 32px;
     line-height: 48px;
   }
-  
+
   .descriptionItem {
     font-size: 16px;
     line-height: 24px;
   }
 
   .buttonGroup {
-    margin-top: 48px;
+    margin-top: 56px;
     gap: 12px;
   }
 }

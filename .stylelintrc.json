@@ -12,9 +12,9 @@
       true,
       {
         "ignoreFontFamilies": [
-          "Roboto-Regular",
-          "Roboto-Bold",
-          "Roboto-Medium",
+          "Poppins-Regular",
+          "Poppins-Bold",
+          "Poppins-Medium",
           "PingFangSC-Regular",
           "PingFangSC-Medium"
         ]

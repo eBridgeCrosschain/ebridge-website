@@ -1,6 +1,7 @@
 /* stylelint-disable selector-class-pattern */
 @import '/src/assets/theme/color.scss';
 @import '/src/assets/theme/constants.scss';
+@import '/src/assets/theme/font.scss';
 
 .whiteType {
   color: $primary-text;
@@ -38,7 +39,8 @@
 
     .brandModuleLeft {
       .title {
-        font-weight: 700;
+        font-weight: $font-family-semibold-weight;
+        font-family: $font-family-semibold-family;
         font-size: 48px;
         line-height: 64px;
         padding-bottom: 24px;

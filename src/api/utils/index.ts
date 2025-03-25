@@ -240,6 +240,11 @@ const formatModule = (moduleItem: any): Module | undefined => {
           mobilePaddingTop: moduleItem.mobilePaddingTop || undefined,
           mobilePaddingBottom: moduleItem.mobilePaddingBottom || undefined,
           defaultBackgroundColor: moduleItem.defaultBackgroundColor || undefined,
+          titleColor: moduleItem.defaultTitleColor || undefined,
+          subTitleColor: moduleItem.defaultSubTitleColor || undefined,
+          subTitleMaxWidth: moduleItem.subTitleMaxWidth || undefined,
+          subTitleTextAlign: moduleItem.subTitleTextAlign || undefined,
+          backgroundImage: moduleItem.backgroundImage || undefined,
         },
       };
     case ModuleType.FeatureCardModule:
@@ -330,6 +335,11 @@ const formatCommonButton = (data: any): CommonButtonComponent | undefined => {
     text: data.text || undefined,
     commonStyles: {
       width: data.width || undefined,
+      height: data.height || undefined,
+      fontSize: data.fontSize || undefined,
+      borderRadius: data.radius || undefined,
+      paddingHorizontal: data.paddingHorizontal || undefined,
+      paddingVertical: data.paddingVertical || undefined,
       default: {
         backgroundColor: data.defaultBackgroundColor || undefined,
         fontColor: data.defaultFontColor || undefined,
@@ -363,6 +373,8 @@ const formatPartnerList = (partnerList: any[] = []): IPartnerItem[] => {
     .map<IPartnerItem>(({ partner_id: item }) => ({
       index: item.index,
       logoImage: item.logoImage,
+      hoverLogoImage: item.hoverLogoImage,
+      borderColor: item.borderColor,
       url: item.url || undefined,
     }))
     .sort((a, b) => a.index - b.index);

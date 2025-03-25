@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import CommonImage from '@/components/CommonImage';
 import styles from './styles.module.scss';
 import { DescriptionComponent } from '@/types/components/description';
+import { CSSProperties } from 'react';
 
 export interface RowDescriptionProps {
   iconSrc?: string;
@@ -12,6 +13,7 @@ export interface RowDescriptionProps {
   contentSize?: number;
   contentColor?: string;
   className?: string;
+  style?: CSSProperties;
   subContentList?: Array<DescriptionComponent>;
   multiLayer?: boolean;
   isLast: boolean;
@@ -27,6 +29,7 @@ export default function RowDescription(props: RowDescriptionProps) {
     contentSize,
     contentColor,
     className,
+    style,
     subContentList,
     multiLayer = false,
     isLast = false,
@@ -35,7 +38,7 @@ export default function RowDescription(props: RowDescriptionProps) {
   return (
     <div
       className={clsx([styles.rowDescription, className])}
-      style={{ marginBottom: isLast ? '0' : multiLayer ? '40px' : '16px' }}>
+      style={{ marginBottom: isLast ? '0' : multiLayer ? '40px' : '16px', ...style }}>
       {iconSrc && (
         <CommonImage
           src={iconSrc}

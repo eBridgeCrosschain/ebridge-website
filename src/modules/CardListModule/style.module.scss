@@ -1,4 +1,6 @@
 /* stylelint-disable selector-class-pattern */
+@import '/src/assets/theme/font.scss';
+
 .cardListModuleWrap {
   height: auto;
   margin: 0 auto;
@@ -14,7 +16,8 @@
 
 .title {
   font-size: 40px;
-  font-weight: 700;
+  font-weight: $font-family-semibold-weight;
+  font-family: $font-family-semibold-family;
   line-height: 48px;
   text-align: center;
   color: var(--primaryText);
@@ -22,7 +25,7 @@
 
 .subTitle {
   font-size: 18px;
-  font-weight: 400;
+  font-weight: $font-family-regular-weight;
   line-height: 26px;
   margin-top: 16px;
   text-align: center;
@@ -51,7 +54,8 @@
 
 .cardItemTitle {
   font-size: 22px;
-  font-weight: 700;
+  font-weight: $font-family-semibold-weight;
+  font-family: $font-family-semibold-family;
   line-height: 30px; 
   color: var(--primaryText);
 }

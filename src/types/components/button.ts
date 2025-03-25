@@ -12,6 +12,11 @@ export type CommonButtonComponent = ButtonBase & {
   text?: string;
   commonStyles: {
     width?: string;
+    height?: string;
+    borderRadius?: string;
+    paddingHorizontal?: string;
+    paddingVertical?: string;
+    fontSize?: string;
     // The color takes effect when the type is "Default"
     default: {
       backgroundColor?: string;
