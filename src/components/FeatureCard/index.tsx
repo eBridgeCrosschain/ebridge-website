@@ -10,6 +10,7 @@ interface FeatureCardProps {
   className?: string;
   style?: CSSProperties;
   item: IFeatureCardItem;
+  isShowHoverEffect?: boolean;
 }
 
 const DEFAULT_ICON_SIZE = {
@@ -21,6 +22,7 @@ export default function FeatureCard(props: FeatureCardProps) {
   const {
     className,
     style,
+    isShowHoverEffect = true,
     item: { title, content, iconNormal, iconHover },
   } = props;
   const { isMobile } = useResponsive();
@@ -37,11 +39,20 @@ export default function FeatureCard(props: FeatureCardProps) {
 
   return (
     <div
-      className={clsx(styles.featureCardWrapper, isHover && styles.featureCardWrapperHover, className)}
+      className={clsx(
+        styles.featureCardWrapper,
+        isShowHoverEffect && isHover && styles.featureCardWrapperHover,
+        className,
+      )}
       style={style}
       onMouseOver={onMouseOver}
       onMouseOut={onMouseOut}>
-      <div className={styles.iconWrap}>
+      <div
+        className={styles.iconWrap}
+        style={{
+          width: iconNormal.width ?? DEFAULT_ICON_SIZE.WIDTH,
+          height: iconNormal.height ?? DEFAULT_ICON_SIZE.HEIGHT,
+        }}>
         {/* Two pictures are superimposed to speed up the speed of displaying pictures when hovering */}
         <CommonImage
           quality={100}
@@ -58,7 +69,7 @@ export default function FeatureCard(props: FeatureCardProps) {
           width={iconNormal.width ?? DEFAULT_ICON_SIZE.WIDTH}
           height={iconNormal.height ?? DEFAULT_ICON_SIZE.HEIGHT}
           style={{
-            display: isHover ? 'none' : 'block',
+            display: isShowHoverEffect && isHover ? 'none' : 'block',
           }}
           alt="featureIcon"
         />

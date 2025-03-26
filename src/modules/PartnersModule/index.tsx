@@ -17,14 +17,20 @@ export default function PartnersModule({ module }: IPartnersModuleProps) {
 
   const { isMobile } = useResponsive();
   const [isHover, setIsHover] = useState(false);
+  const [hoverIndex, setHoverIndex] = useState<null | number>(null);
 
-  const onMouseOver = useCallback(() => {
-    if (!isMobile) {
-      setIsHover(true);
-    }
-  }, [isMobile]);
+  const onMouseOver = useCallback(
+    (index: number) => {
+      if (!isMobile) {
+        setIsHover(true);
+        setHoverIndex(index);
+      }
+    },
+    [isMobile],
+  );
   const onMouseOut = useCallback(() => {
     setIsHover(false);
+    setHoverIndex(null);
   }, []);
 
   return (
@@ -33,9 +39,7 @@ export default function PartnersModule({ module }: IPartnersModuleProps) {
       style={{
         paddingTop: getVertical(commonStyles).top + 'px',
         paddingBottom: getVertical(commonStyles).bottom + 'px',
-      }}
-      onMouseOver={onMouseOver}
-      onMouseOut={onMouseOut}>
+      }}>
       <section className={styles.content}>
         <h1 className={styles.sectionTitle}>{title?.text}</h1>
         <div className={styles.partnersList}>
@@ -47,7 +51,9 @@ export default function PartnersModule({ module }: IPartnersModuleProps) {
                 style={{ backgroundColor: commonStyles.defaultCardBackgroundColor, borderColor: item.borderColor }}
                 onClick={() => {
                   item.url && window.open(item.url);
-                }}>
+                }}
+                onMouseOver={() => onMouseOver(index)}
+                onMouseOut={onMouseOut}>
                 <CommonImage
                   quality={100}
                   width={200}
@@ -57,7 +63,7 @@ export default function PartnersModule({ module }: IPartnersModuleProps) {
                   alt="hoverPartnerImage"
                   priority
                   style={{
-                    display: isHover ? 'block' : 'none',
+                    display: isHover && hoverIndex === index ? 'block' : 'none',
                   }}
                 />
                 <CommonImage
@@ -69,7 +75,7 @@ export default function PartnersModule({ module }: IPartnersModuleProps) {
                   alt="partnerImage"
                   priority
                   style={{
-                    display: isHover ? 'none' : 'block',
+                    display: isHover && hoverIndex === index ? 'none' : 'block',
                   }}
                 />
               </div>

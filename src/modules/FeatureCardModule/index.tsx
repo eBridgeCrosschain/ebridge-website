@@ -5,6 +5,7 @@ import { INITIAL, variantDownToUp, VIEWPORT, WHILE_IN_VIEW } from '@/constants/m
 import { IFeatureCardModule } from '@/types/modules/featureCardModule';
 import useGetVertical from '@/hooks/useGetVertical';
 import styles from './styles.module.scss';
+import { useMemo } from 'react';
 
 interface FeatureCardModuleProps {
   module: IFeatureCardModule;
@@ -15,6 +16,24 @@ export default function FeatureCardModule({
 }: FeatureCardModuleProps) {
   const { getVertical } = useGetVertical();
   const { defaultBackgroundColor } = commonStyles || {};
+
+  const cardPadding = useMemo(() => {
+    return getVertical({
+      paddingTop: commonStyles?.cardPaddingTop,
+      paddingBottom: commonStyles?.cardPaddingBottom,
+      mobilePaddingTop: commonStyles?.mobileCardPaddingTop,
+      mobilePaddingBottom: commonStyles?.mobileCardPaddingBottom,
+      defaultPaddingTop: 48,
+      defaultPaddingBottom: 64,
+    });
+  }, [
+    commonStyles?.cardPaddingBottom,
+    commonStyles?.cardPaddingTop,
+    commonStyles?.mobileCardPaddingBottom,
+    commonStyles?.mobileCardPaddingTop,
+    getVertical,
+  ]);
+
   return (
     <motion.div initial={INITIAL} whileInView={WHILE_IN_VIEW} viewport={VIEWPORT}>
       <section
@@ -43,7 +62,10 @@ export default function FeatureCardModule({
                       className={styles.card}
                       style={{
                         backgroundColor: commonStyles?.defaultCardBackgroundColor,
+                        paddingTop: cardPadding.top + 'px',
+                        paddingBottom: cardPadding.bottom + 'px',
                       }}
+                      isShowHoverEffect={commonStyles?.hoverEffect}
                       item={item}
                     />
                   );

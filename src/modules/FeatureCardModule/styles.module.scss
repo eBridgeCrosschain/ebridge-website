@@ -32,9 +32,9 @@
 
   .sectionCardWrapper {
     display: flex;
-    gap: 24px;
+    gap: 64px;
     justify-content: center;
-    min-height: 400px;
+    // min-height: 400px;
   }
 
   @media screen and (min-width: #{$divide-991 + 1}) {

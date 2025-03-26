@@ -19,10 +19,15 @@ export interface IFeatureCardModule {
   };
   featureList: IFeatureCardItem[];
   commonStyles?: {
+    hoverEffect: boolean;
     paddingTop?: string;
     paddingBottom?: string;
     mobilePaddingTop?: string;
     mobilePaddingBottom?: string;
+    cardPaddingTop?: string;
+    cardPaddingBottom?: string;
+    mobileCardPaddingTop?: string;
+    mobileCardPaddingBottom?: string;
     defaultBackgroundColor?: string;
     defaultCardBackgroundColor?: string;
   };
