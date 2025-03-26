@@ -18,7 +18,7 @@ export default function FeatureCardModule({
   const { defaultBackgroundColor } = commonStyles || {};
 
   const cardPadding = useMemo(() => {
-    return getVertical({
+    const { top, bottom } = getVertical({
       paddingTop: commonStyles?.cardPaddingTop,
       paddingBottom: commonStyles?.cardPaddingBottom,
       mobilePaddingTop: commonStyles?.mobileCardPaddingTop,
@@ -26,10 +26,22 @@ export default function FeatureCardModule({
       defaultPaddingTop: 48,
       defaultPaddingBottom: 64,
     });
+
+    const { top: left, bottom: right } = getVertical({
+      paddingTop: commonStyles?.cardPaddingHorizontal,
+      paddingBottom: commonStyles?.cardPaddingHorizontal,
+      mobilePaddingTop: commonStyles?.mobileCardPaddingHorizontal,
+      mobilePaddingBottom: commonStyles?.mobileCardPaddingHorizontal,
+      defaultPaddingTop: 32,
+      defaultPaddingBottom: 32,
+    });
+    return { top, bottom, left, right };
   }, [
     commonStyles?.cardPaddingBottom,
+    commonStyles?.cardPaddingHorizontal,
     commonStyles?.cardPaddingTop,
     commonStyles?.mobileCardPaddingBottom,
+    commonStyles?.mobileCardPaddingHorizontal,
     commonStyles?.mobileCardPaddingTop,
     getVertical,
   ]);
@@ -64,9 +76,13 @@ export default function FeatureCardModule({
                         backgroundColor: commonStyles?.defaultCardBackgroundColor,
                         paddingTop: cardPadding.top + 'px',
                         paddingBottom: cardPadding.bottom + 'px',
+                        paddingLeft: cardPadding.left + 'px',
+                        paddingRight: cardPadding.right + 'px',
                       }}
                       isShowHoverEffect={commonStyles?.hoverEffect}
                       item={item}
+                      iconHeight={commonStyles?.iconHeight}
+                      iconWidth={commonStyles?.iconWidth}
                     />
                   );
                 })}

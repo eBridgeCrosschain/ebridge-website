@@ -270,10 +270,14 @@ const formatModule = (moduleItem: any): Module | undefined => {
           mobilePaddingBottom: moduleItem.mobilePaddingBottom || undefined,
           cardPaddingTop: moduleItem.cardPaddingTop || undefined,
           cardPaddingBottom: moduleItem.cardPaddingBottom || undefined,
+          cardPaddingHorizontal: moduleItem.cardPaddingHorizontal || undefined,
           mobileCardPaddingTop: moduleItem.mobileCardPaddingTop || undefined,
           mobileCardPaddingBottom: moduleItem.mobileCardPaddingBottom || undefined,
+          mobileCardPaddingHorizontal: moduleItem.mobileCardPaddingHorizontal || undefined,
           defaultBackgroundColor: moduleItem.defaultBackgroundColor || undefined,
           defaultCardBackgroundColor: moduleItem.defaultCardBackgroundColor || undefined,
+          iconWidth: moduleItem.iconWidth || undefined,
+          iconHeight: moduleItem.iconHeight || undefined,
         },
       };
     case ModuleType.InfiniteScrollCarouselModule:

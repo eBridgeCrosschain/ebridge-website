@@ -11,6 +11,8 @@ interface FeatureCardProps {
   style?: CSSProperties;
   item: IFeatureCardItem;
   isShowHoverEffect?: boolean;
+  iconWidth?: string;
+  iconHeight?: string;
 }
 
 const DEFAULT_ICON_SIZE = {
@@ -23,6 +25,8 @@ export default function FeatureCard(props: FeatureCardProps) {
     className,
     style,
     isShowHoverEffect = true,
+    iconWidth = DEFAULT_ICON_SIZE.WIDTH,
+    iconHeight = DEFAULT_ICON_SIZE.HEIGHT,
     item: { title, content, iconNormal, iconHover },
   } = props;
   const { isMobile } = useResponsive();
@@ -50,24 +54,24 @@ export default function FeatureCard(props: FeatureCardProps) {
       <div
         className={styles.iconWrap}
         style={{
-          width: iconNormal.width ?? DEFAULT_ICON_SIZE.WIDTH,
-          height: iconNormal.height ?? DEFAULT_ICON_SIZE.HEIGHT,
+          width: iconNormal.width ?? Number(iconWidth),
+          height: iconNormal.height ?? Number(iconHeight),
         }}>
         {/* Two pictures are superimposed to speed up the speed of displaying pictures when hovering */}
         <CommonImage
           quality={100}
           className={styles.iconHover}
           src={iconHover.filename_disk ? s3Url + iconHover.filename_disk : ''}
-          width={iconHover.width ?? DEFAULT_ICON_SIZE.WIDTH}
-          height={iconHover.height ?? DEFAULT_ICON_SIZE.HEIGHT}
+          width={iconHover.width ?? Number(iconWidth)}
+          height={iconHover.height ?? Number(iconHeight)}
           alt="featureIcon"
         />
         <CommonImage
           quality={100}
           className={styles.iconNormal}
           src={iconNormal.filename_disk ? s3Url + iconNormal.filename_disk : ''}
-          width={iconNormal.width ?? DEFAULT_ICON_SIZE.WIDTH}
-          height={iconNormal.height ?? DEFAULT_ICON_SIZE.HEIGHT}
+          width={iconNormal.width ?? Number(iconWidth)}
+          height={iconNormal.height ?? Number(iconHeight)}
           style={{
             display: isShowHoverEffect && isHover ? 'none' : 'block',
           }}

@@ -26,9 +26,13 @@ export interface IFeatureCardModule {
     mobilePaddingBottom?: string;
     cardPaddingTop?: string;
     cardPaddingBottom?: string;
+    cardPaddingHorizontal?: string;
     mobileCardPaddingTop?: string;
     mobileCardPaddingBottom?: string;
+    mobileCardPaddingHorizontal?: string;
     defaultBackgroundColor?: string;
     defaultCardBackgroundColor?: string;
+    iconWidth?: string;
+    iconHeight?: string;
   };
 }
