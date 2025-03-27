@@ -1,0 +1,29 @@
+/* stylelint-disable selector-class-pattern */
+@import '/src/assets/theme/font.scss';
+
+.rowDescription {
+  display: flex;
+  align-items: flex-start;
+}
+
+.secondaryList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: var(--primaryText);
+}
+
+.title {
+  font-size: 22px;
+  font-weight: $font-family-semibold-weight;
+  font-family: $font-family-semibold-family;
+  line-height: 30px;
+  color: var(--primaryText);
+}
+
+.desc {
+  font-size: 18px;
+  font-weight: $font-family-regular-weight;
+  line-height: 26px;
+  color: var(--secondaryText);
+}
